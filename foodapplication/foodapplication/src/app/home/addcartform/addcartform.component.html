@@ -1,0 +1,17 @@
+<div class="main">      
+         
+
+    <div class="signup" >
+        <form [formGroup]="addcartform" (ngSubmit)="postdatatocart()">
+           
+            <input type="text"  name="name" placeholder="Coustomer Name" required formControlName="name"   (keypress)="alphaInput($event)" maxlength="35" >
+            
+            <input type="text" value={{name}} name="item" placeholder="Dish Name" required formControlName="item" readonly>
+            
+            <input type="number" name="quantity" placeholder="Ouantity" required formControlName="quantity" min="1" (keypress)=" numberInput($event)">
+            <button [disabled]="!addcartform.valid">Submit</button>
+        </form>
+    </div>
+
+ 
+</div>
